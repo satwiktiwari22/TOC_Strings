@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+string union_of_string(string s,string p){
+    string u="";int f=0;
+    for(int i=0;i<s.length();i++){
+        u=u+s[i];
+    }
+    for(int i=0;i<p.length();i++){
+        for(int j=0;j<s.length();j++){
+            if(p[i]==s[j]){
+                f=0;
+                break;
+            }
+            else{
+                f=1;
+            }
+        }
+        if(f==1){
+            u=u+p[i];
+        }
+    }
+    return u;
+}
+
+int main() {
+    string s="abcd";
+    string p="bdbeaf";
+    cout<<union_of_string(s,p);
+    
+    return 0;
+}
